@@ -1,0 +1,18 @@
+<div class="centrer">
+  <h1>Game Choice</h1>
+  <form (ngSubmit)="onStartGame(f)" #f="ngForm">
+    <label for="game">Carte : </label>
+    <select name="game" id="game" class="form-control" ngModel required>
+      <ng-container *ngFor="let s of this.gamesName">
+        <option value={{s}}>{{s}}</option>
+      </ng-container>
+    </select>
+    <p>
+      <button class="favorite styled"
+              type="submit"
+              [disabled]="f.invalid">
+        Start
+      </button>
+    </p>
+  </form>
+</div>

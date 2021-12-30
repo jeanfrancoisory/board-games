@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="map">
+    <ng-container *ngFor="let tile of board">
+      <ng-container *ngFor="let y of [0,1]">
+        <div class="tile notbrawn" *ngIf="!line(tile.coordX, y)" (click)="clickPawn(tile.coordX, tile.coordY)">
+          <div *ngIf="allowed(tile)" class="pawn" [style]="'background: '+tile.pawn.color+'; '+">
+          </div>
+        </div>
+        <div class="tile brawn" *ngIf="line(tile.coordX, y)" (click)="clickEmpty()"></div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
